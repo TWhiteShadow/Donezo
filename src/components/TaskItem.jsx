@@ -98,6 +98,7 @@ const TaskItem = ({ task }) => {
                         <Button
                             onClick={() => setIsEditing(true)}
                             variant="ghost"
+                            className="hover:bg-secondary"
                         >
                             Edit
                         </Button>
