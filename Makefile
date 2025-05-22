@@ -1,5 +1,5 @@
 up : 
-	yarn dev
+	yarn dev --host
 
 update : 
 	yarn 
