@@ -15,7 +15,6 @@ function NavbarLayout() {
 }
 
 function App() {
-
   return (
     <Routes>
       <Route element={<NavbarLayout />}>
