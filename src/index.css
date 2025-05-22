@@ -124,3 +124,21 @@
     cursor: pointer;
   }
 }
+
+
+.pink {
+  --primary: pink;
+  --primary-foreground: rgba(0, 0, 0, 0.788);
+  --secondary: pink;
+}
+
+.green {
+  --primary: green;
+  --secondary: rgba(0, 128, 0, 0.603);
+}
+
+.purple {
+  --primary: rgb(115, 115, 235);
+  --primary-foreground: white;
+  --secondary: rgba(115, 115, 235, 0.575);
+}
