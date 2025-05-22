@@ -73,7 +73,7 @@ The application will be available at `http://localhost:5173` in development mode
 - **[React Router v7](https://reactrouter.com/)** - Navigation and routing
 - **[TailwindCSS v4](https://tailwindcss.com/)** - Utility-first CSS framework
 - **[Axios](https://axios-http.com/)** - HTTP client for API requests
-- **[React Query](https://tanstack.com/query/latest)** - Data synchronization
+- **[Tanstack Query](https://tanstack.com/query/latest)** - Data synchronization
 - **[ShadCN](https://ui.shadcn.com/docs/tailwind-v4)** - Minimalist & accessible UI
 - **[Sonner](https://sonner.emilkowal.ski/)** - Easiest Toast notifications
 - **[Next Themes](https://github.com/pacocoursey/next-themes)** - Theme management
