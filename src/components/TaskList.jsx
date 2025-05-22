@@ -24,7 +24,7 @@ const TaskList = ({ showCompleted = false }) => {
 
     if (filteredTasks.length === 0) {
         return (
-            <div className="text-center text-gray-500 p-8">
+            <div className="text-center text-gray-500 dark:text-gray-400 p-8">
                 {showCompleted
                     ? "No completed tasks yet"
                     : "No active tasks. Add one above!"}

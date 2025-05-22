@@ -5,6 +5,7 @@ import { toast } from 'sonner';
 import { Checkbox } from './ui/checkbox';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
+import { Card, CardContent, CardFooter } from './ui/card';
 
 const TaskItem = ({ task }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -54,63 +55,63 @@ const TaskItem = ({ task }) => {
     };
 
     return (
-        <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
-            <Checkbox
-                checked={task.isComplete}
-                onCheckedChange={handleToggleComplete}
-                className="w-5 h-5 rounded-md"
-            />
+        <Card className="mb-2">
+            <CardContent className="flex items-center gap-4">
+                <Checkbox
+                    checked={task.isComplete}
+                    onCheckedChange={handleToggleComplete}
+                    className="w-5 h-5 rounded-md"
+                />
 
-            {isEditing ? (
-                <form onSubmit={handleUpdate} className="flex-1 flex gap-2">
-                    <Input
-                        type="text"
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)}
-                        className="flex-1"
-                        autoFocus
-                    />
-                    <Button
-                        type="submit"
-                        variant="default"
-                        className="bg-green-500 hover:bg-green-600"
-                    >
-                        Save
-                    </Button>
-                    <Button
-                        type="button"
-                        variant="secondary"
-                        onClick={() => setIsEditing(false)}
-                    >
-                        Cancel
-                    </Button>
-                </form>
-            ) : (
-                <>
-                    <p className={cn(
-                        "flex-1",
-                        task.isComplete && "line-through text-gray-500"
-                    )}>
-                        {task.description}
-                    </p>
-                    <Button
-                        onClick={() => setIsEditing(true)}
-                        variant="ghost"
-                        className=""
-                    >
-                        Edit
-                    </Button>
-                </>
-            )}
-
-            <Button
-                onClick={handleDelete}
-                variant="ghost"
-                className="text-red-500 hover:bg-red-50 hover:text-red-500"
-            >
-                Delete
-            </Button>
-        </div>
+                {isEditing ? (
+                    <form onSubmit={handleUpdate} className="flex-1 flex gap-2">
+                        <Input
+                            type="text"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            className="flex-1"
+                            autoFocus
+                        />
+                        <Button
+                            type="submit"
+                            variant="default"
+                            className="bg-green-500 hover:bg-green-600"
+                        >
+                            Save
+                        </Button>
+                        <Button
+                            type="button"
+                            variant="secondary"
+                            onClick={() => setIsEditing(false)}
+                        >
+                            Cancel
+                        </Button>
+                    </form>
+                ) : (
+                    <>
+                        <p className={cn(
+                            "flex-1",
+                            task.isComplete && "line-through text-gray-500 dark:text-gray-400"
+                        )}>
+                            {task.description}
+                        </p>
+                        <Button
+                            onClick={() => setIsEditing(true)}
+                            variant="ghost"
+                        >
+                            Edit
+                        </Button>
+                        <Button
+                            onClick={handleDelete}
+                            variant="ghost"
+                            className="text-red-500 hover:bg-red-50 hover:text-red-500"
+                        >
+                            Delete
+                        </Button>
+                    </>
+                )}
+            </CardContent>
+        </Card>
     );
 };
 

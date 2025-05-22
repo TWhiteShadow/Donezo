@@ -28,7 +28,7 @@ const TaskInput = () => {
             />
             <Button
                 type="submit"
-                className="ml-2 px-4 py-2 rounded-lg text-white disabled:opacity-50"
+                className="ml-2 px-4 py-2 rounded-lg disabled:opacity-50"
                 disabled={!task.trim() || isLoading}
             >
                 {isLoading ? 'Adding...' : 'Add Task'}
