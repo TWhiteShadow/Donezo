@@ -56,12 +56,24 @@ const TaskItem = ({ task }) => {
 
     return (
         <Card className="mb-2">
-            <CardContent className="flex items-center gap-4">
-                <Checkbox
-                    checked={task.isComplete}
-                    onCheckedChange={handleToggleComplete}
-                    className="w-5 h-5 rounded-md"
-                />
+            <CardContent className={cn("flex items-center", !isEditing && " gap-4")}>
+                <div className={cn("flex items-center gap-4 ", !isEditing && "flex-1")}>
+                    <Checkbox
+                        id={`task-${task.id}`}
+                        checked={task.isComplete}
+                        onCheckedChange={handleToggleComplete}
+                        className="w-5 h-5 rounded-md"
+                    />
+                    <label
+                        htmlFor={`task-${task.id}`}
+                        className={cn(
+                            "flex-1 cursor-pointer",
+                            task.isComplete && "line-through text-gray-500 dark:text-gray-400"
+                        )}
+                    >
+                        {!isEditing && task.description}
+                    </label>
+                </div>
 
                 {isEditing ? (
                     <form onSubmit={handleUpdate} className="flex-1 flex gap-2">
@@ -89,12 +101,6 @@ const TaskItem = ({ task }) => {
                     </form>
                 ) : (
                     <>
-                        <p className={cn(
-                            "flex-1",
-                            task.isComplete && "line-through text-gray-500 dark:text-gray-400"
-                        )}>
-                            {task.description}
-                        </p>
                         <Button
                             onClick={() => setIsEditing(true)}
                             variant="ghost"
@@ -112,7 +118,7 @@ const TaskItem = ({ task }) => {
                     </>
                 )}
             </CardContent>
-        </Card>
+        </Card >
     );
 };
 
